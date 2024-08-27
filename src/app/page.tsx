@@ -1,23 +1,16 @@
-import Image from "next/image";
+'use client'
+import BottomNavigation from "@/components/BottomNagivation/BottomNavigation";
 import backgroundImage from '../../public/images/background.png';
-import BottomNavigation from "@/component/BottomNagivation/BottomNavigation";
+import MarketingPlatformInfo from "@/components/HomePlateformSelect/MarketingPlatformInfo";
+import DragAndDrop from "@/components/HomePlateformSelect/DragAndDropBox";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${backgroundImage.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        zIndex: -10
-      }}
-      className="w-screen h-screen flex flex-col items-center justify-between"
-    >
-      <div className="bg-green-500 p-4">
-        <p className="text-red-700">hay</p>
+    <div className="w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('/images/background.png')` }}>
+      <div className="flex flex-col items-center justify-evenly">
+        <MarketingPlatformInfo />
+        <DragAndDrop />
       </div>
-
       <BottomNavigation />
     </div>
   );
