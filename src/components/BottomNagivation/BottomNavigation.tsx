@@ -12,7 +12,7 @@ const BottomNavigation = () => {
     ];
 
     return (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center mt-8">
             <div className="px-4 py-0 bg-white rounded-3xl w-2/3 flex justify-between items-center">
                 <div className="flex gap-x-4 flex-row justify-center items-center">
                     {navLinks1.map((link, index) => (
