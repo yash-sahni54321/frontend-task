@@ -53,11 +53,11 @@ const DragAndDrop = () => {
 
     return (
         <div
-            className="w-full max-w-md h-40 bg-white rounded-3xl border border-dashed border-gray-300 flex items-center justify-center"
+            className="w-full max-w-md h-32 bg-white rounded-3xl border border-dashed border-gray-300 flex items-center justify-center"
             style={{ boxShadow: "0 22px 60px rgba(0, 0, 0, 0.15)" }}
         >
             <div className="flex flex-col justify-center items-center">
-                <EllipseSVG />
+                <EllipseSVG width={50} height={50} />
                 <p className="text-gray-600 text-lg font-medium mt-2">
                     Drag features to view details
                 </p>

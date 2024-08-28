@@ -5,6 +5,7 @@ import DragAndDrop from "@/components/HomePlateformSelect/DragAndDropBox";
 
 import { useEffect, useState } from "react";
 import BubbleIconsAndPosition from "@/components/UI/BubbleIconsAndPosition";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   const [isBubbled, setIsBubbled] = useState(false);
@@ -21,6 +22,10 @@ export default function Home() {
         <DragAndDrop />
       </div>
       <BottomNavigation />
+      <div className="flex justify-center items-center w-full py-2">
+        <p className="text-black font-light text-sm">Loved by product folks at</p>
+      </div>
+      <Footer />
     </div>
   );
 }

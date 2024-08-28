@@ -53,14 +53,14 @@ const BubbleIconsAndPosition = (props: Props) => {
         "-translate-x-[530px] translate-y-[200px]",
     ];
 
+    const initialPosition = "translate-y-[250px]";
+
     return (
         <div className="absolute">
             {features.map((feature, index) => (
                 <div
                     key={feature.id}
-                    className={`absolute w-8 h-8 text-center rounded-full transition-transform duration-500 ${props.isBubbled ? positions[index] : "translate-x-0 translate-y-0"
-                        }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
+                    className={`absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${props.isBubbled ? positions[index] : initialPosition}`}
                 >
                     {feature.icon}
                 </div>
