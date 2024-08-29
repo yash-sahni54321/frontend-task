@@ -23,11 +23,11 @@ const Footer = () => {
   ];
 
   return (
-    <div className='flex justify-around items-center py-4 bg-white z-10'>
+    <div className='flex flex-wrap justify-center items-center gap-4 py-4 bg-white z-10'>
       {footerData.map(item => (
         <div
           key={item.id}
-          className='flex justify-center items-center bg-white p-4 gap-x-2 border border-gray-300 rounded-lg'
+          className='flex flex-col sm:flex-row justify-center items-center bg-white p-2 sm:p-4 gap-x-2 border border-gray-300 rounded-lg'
         >
           <div>{item.icon}</div>
           <span className='text-sm text-gray-600'>{item.name}</span>

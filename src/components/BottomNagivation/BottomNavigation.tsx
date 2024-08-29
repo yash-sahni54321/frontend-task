@@ -12,9 +12,9 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <div className='w-full h-full flex items-center justify-center mt-32'>
-      <div className='px-4 py-0 bg-white rounded-3xl w-2/3 flex justify-between items-center'>
-        <div className='flex gap-x-4 flex-row justify-center items-center'>
+    <div className='w-full flex items-center justify-center mt-8 md:mt-32'>
+      <div className='px-4 py-2 bg-white rounded-3xl w-full md:w-2/3 flex flex-col md:flex-row justify-between items-center'>
+        <div className='flex gap-x-2 md:gap-x-4 flex-wrap justify-center items-center mb-4 md:mb-0'>
           {navLinks1.map((link, index) => (
             <button
               key={index}
@@ -23,7 +23,7 @@ const BottomNavigation = () => {
               {link}
             </button>
           ))}
-          <MagicSVG />
+          <MagicSVG className='mt-2 md:mt-0' />
           <button className='text-black hover:text-gray-700 text-sm'>
             FAQ's
           </button>
@@ -31,7 +31,7 @@ const BottomNavigation = () => {
             Blogs
           </button>
         </div>
-        <div className='flex gap-x-4 p-4 flex-row justify-center items-center'>
+        <div className='flex gap-x-4 flex-wrap justify-center items-center'>
           <GlobeSVG width={30} height={30} />
           <button className='text-black hover:text-gray-700 text-sm'>
             Sign in

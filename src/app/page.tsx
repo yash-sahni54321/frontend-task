@@ -25,7 +25,7 @@ export default function Home() {
       <Droppable droppableId='Icons'>
         {provided => (
           <div
-            className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat'
+            className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat mx-4'
             style={{ backgroundImage: `url('/images/background.png')` }}
             ref={provided.innerRef}
             {...provided.droppableProps}

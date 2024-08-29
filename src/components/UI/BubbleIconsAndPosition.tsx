@@ -31,6 +31,8 @@ const BubbleIconsAndPosition: React.FC<Props> = ({ isBubbled }) => {
     y: number;
   } | null>(null);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const features: FeatureItem[] = [
     { id: 1, name: 'Document', icon: <DocumentSVG /> },
     { id: 2, name: 'Edit', icon: <EditSVG /> },
@@ -76,25 +78,65 @@ const BubbleIconsAndPosition: React.FC<Props> = ({ isBubbled }) => {
 
   return (
     <div className='absolute'>
-      {features.map((feature, index) => (
-        <Draggable
-          draggableId={feature.id.toString()}
-          index={index}
-          key={feature.id}
+      {/* Desktop View */}
+      <div className='hidden md:block'>
+        {features.map((feature, index) => (
+          <Draggable
+            draggableId={feature.id.toString()}
+            index={index}
+            key={feature.id}
+          >
+            {provided => (
+              <div
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                ref={provided.innerRef}
+                className={`cursor-pointer absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : initialPosition}`}
+                onClick={e => handleIconClick(e, feature)}
+              >
+                {feature.icon}
+              </div>
+            )}
+          </Draggable>
+        ))}
+      </div>
+
+      {/* Mobile View */}
+      <div className='md:hidden'>
+        <button
+          className='fixed right-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-700 text-white rounded-l-lg shadow-md focus:outline-none'
+          onClick={() => setIsOpen(!isOpen)}
         >
-          {provided => (
-            <div
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-              ref={provided.innerRef}
-              className={`cursor-pointer absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : initialPosition}`}
-              onClick={e => handleIconClick(e, feature)}
-            >
-              {feature.icon}
-            </div>
-          )}
-        </Draggable>
-      ))}
+          ❖
+        </button>
+
+        {isOpen && (
+          <div className='fixed right-16 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-lg p-4 z-50'>
+            {features.map((feature, index) => (
+              <Draggable
+                draggableId={feature.id.toString()}
+                index={index}
+                key={feature.id}
+              >
+                {provided => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    className='flex items-center mb-3 cursor-pointer'
+                    onClick={e => handleIconClick(e, feature)}
+                  >
+                    <div className='w-8 h-8 flex items-center justify-center mr-2'>
+                      <div className='text-gray-800'>{feature.icon}</div>
+                    </div>
+                  </div>
+                )}
+              </Draggable>
+            ))}
+          </div>
+        )}
+      </div>
+
       {selectedIcon && (
         <IconModal
           name={selectedIcon.name}
