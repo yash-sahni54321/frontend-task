@@ -23,11 +23,17 @@ const positions = [
   '-translate-x-[530px] translate-y-[200px]',
 ];
 
+const onDragStart = (e: React.DragEvent<HTMLDivElement>, item: FeatureItem) => {
+  e.dataTransfer.setData('item', JSON.stringify(item));
+};
+
 const BubbleIcon = ({ feature, index, isBubbled }: Props) => {
   return (
     <div className='relative group inline-block'>
       <div
         key={index}
+        draggable
+        onDragStart={e => onDragStart(e, feature)}
         className={`cursor-pointer  absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : 'translate-y-[250px]'}`}
       >
         {feature.icon}
