@@ -1,11 +1,11 @@
 'use client';
 import BottomNavigation from '@/components/BottomNagivation/BottomNavigation';
 import MarketingPlatformInfo from '@/components/HomePlateformSelect/MarketingPlatformInfo';
-import DragAndDrop from '@/components/HomePlateformSelect/DragAndDropBox';
 import { useEffect, useState } from 'react';
-import BubbleIconsAndPosition from '@/components/UI/BubbleIconsAndPosition';
 import Footer from '@/components/Footer/Footer';
-import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd';
+import DragAndDrop from '@/components/HomePlateformSelect/DragAndDropBox';
+import BubbleGroup from '@/components/UI/BubbleGroup';
 
 export default function Home() {
   const [isBubbled, setIsBubbled] = useState(false);
@@ -22,16 +22,16 @@ export default function Home() {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId='Icons'>
+      <Droppable droppableId='some_id'>
         {provided => (
           <div
-            className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat mx-4'
-            style={{ backgroundImage: `url('/images/background.png')` }}
             ref={provided.innerRef}
             {...provided.droppableProps}
+            className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat'
+            style={{ backgroundImage: `url('/images/background.png')` }}
           >
             <div className='flex flex-col items-center justify-evenly'>
-              <BubbleIconsAndPosition isBubbled={isBubbled} />
+              <BubbleGroup isBubbled={isBubbled} />
               <MarketingPlatformInfo />
               <DragAndDrop />
             </div>
@@ -42,7 +42,6 @@ export default function Home() {
               </p>
             </div>
             <Footer />
-            {provided.placeholder}
           </div>
         )}
       </Droppable>
