@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "eslint -c .eslintrc.json ./",
+        "lint:fix": "eslint -c .eslintrc.json ./ --fix"
     },
     "dependencies": {
         "@types/react-beautiful-dnd": "^13.1.8",
