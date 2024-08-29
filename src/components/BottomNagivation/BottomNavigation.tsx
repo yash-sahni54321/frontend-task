@@ -16,18 +16,18 @@ const BottomNavigation = () => {
             <div className="px-4 py-0 bg-white rounded-3xl w-2/3 flex justify-between items-center">
                 <div className="flex gap-x-4 flex-row justify-center items-center">
                     {navLinks1.map((link, index) => (
-                        <p key={index} className="text-black hover:text-gray-700 text-sm">
+                        <button key={index} className="text-black hover:text-gray-700 text-sm">
                             {link}
-                        </p>
+                        </button>
                     ))}
                     <MagicSVG />
-                    <p className="text-black hover:text-gray-700 text-sm">FAQ's</p>
-                    <p className="text-black hover:text-gray-700 text-sm">Blogs</p>
+                    <button className="text-black hover:text-gray-700 text-sm">FAQ's</button>
+                    <button className="text-black hover:text-gray-700 text-sm">Blogs</button>
                 </div>
                 <div className="flex gap-x-4 p-4 flex-row justify-center items-center">
                     <GlobeSVG width={30} height={30} />
-                    <p className="text-black hover:text-gray-700 text-sm">Sign in</p>
-                    <p className="text-black hover:text-gray-700 text-sm">Live demo</p>
+                    <button className="text-black hover:text-gray-700 text-sm">Sign in</button>
+                    <button className="text-black hover:text-gray-700 text-sm">Live demo</button>
                 </div>
             </div>
         </div>

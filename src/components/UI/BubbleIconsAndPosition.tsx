@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DocumentSVG from "@/assets/svgs/DocumentSVG";
 import EditSVG from "@/assets/svgs/EditSVG";
 import RecordSVG from "@/assets/svgs/RecordSVG";
@@ -11,6 +11,8 @@ import MessageSVG from "@/assets/svgs/MessageSVG";
 import ArticleSVG from "@/assets/svgs/ArticleSVG";
 import VideoEditSVG from "@/assets/svgs/VideoEditSVG";
 import SearchSVG from "@/assets/svgs/SearchSVG";
+import IconModal from "./IconModal";
+import { Draggable } from "react-beautiful-dnd";
 
 type FeatureItem = {
     id: number;
@@ -19,10 +21,12 @@ type FeatureItem = {
 };
 
 interface Props {
-    isBubbled: boolean
+    isBubbled: boolean;
 }
 
-const BubbleIconsAndPosition = (props: Props) => {
+const BubbleIconsAndPosition: React.FC<Props> = ({ isBubbled }) => {
+    const [selectedIcon, setSelectedIcon] = useState<{ name: string; x: number; y: number } | null>(null);
+
     const features: FeatureItem[] = [
         { id: 1, name: "Document", icon: <DocumentSVG /> },
         { id: 2, name: "Edit", icon: <EditSVG /> },
@@ -55,18 +59,38 @@ const BubbleIconsAndPosition = (props: Props) => {
 
     const initialPosition = "translate-y-[250px]";
 
+    const handleIconClick = (event: React.MouseEvent, icon: { name: string }) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const modalWidth = 700;
+        const offset = 10;
+        setSelectedIcon({ name: icon.name, x: rect.right - modalWidth + offset, y: rect.top - 200 });
+    };
+
     return (
         <div className="absolute">
             {features.map((feature, index) => (
-                <div
-                    key={feature.id}
-                    className={`absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${props.isBubbled ? positions[index] : initialPosition}`}
-                >
-                    {feature.icon}
-                </div>
+                <Draggable draggableId={feature.id.toString()} index={index} key={feature.id}>
+                    {(provided) => (
+                        <div
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            ref={provided.innerRef}
+                            className={`cursor-pointer absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : initialPosition}`}
+                            onClick={(e) => handleIconClick(e, feature)}
+                        >
+                            {feature.icon}
+                        </div>
+                    )}
+                </Draggable>
             ))}
+            {selectedIcon && (
+                <IconModal
+                    name={selectedIcon.name}
+                    position={{ x: selectedIcon.x, y: selectedIcon.y }}
+                />
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default BubbleIconsAndPosition;

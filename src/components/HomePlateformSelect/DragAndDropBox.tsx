@@ -36,20 +36,6 @@ const DragAndDrop = () => {
         e.preventDefault();
     };
 
-    const features: FeatureItem[] = [
-        { id: 1, name: "Document", icon: <DocumentSVG /> },
-        { id: 2, name: "Edit", icon: <EditSVG /> },
-        { id: 3, name: "Record", icon: <RecordSVG /> },
-        { id: 4, name: "Write", icon: <WriteSVG /> },
-        { id: 5, name: "Audio", icon: <AudioPlayer /> },
-        { id: 6, name: "Social Media", icon: <SocialMediaSVG /> },
-        { id: 7, name: "Schedule", icon: <ScheduleSVG /> },
-        { id: 8, name: "Photo Gallery", icon: <PhotoGallerySVG /> },
-        { id: 9, name: "Message", icon: <MessageSVG /> },
-        { id: 10, name: "Article", icon: <ArticleSVG /> },
-        { id: 11, name: "Video Edit", icon: <VideoEditSVG /> },
-        { id: 12, name: "Search", icon: <SearchSVG /> },
-    ];
 
     return (
         <div
@@ -57,7 +43,7 @@ const DragAndDrop = () => {
             style={{ boxShadow: "0 22px 60px rgba(0, 0, 0, 0.15)" }}
         >
             <div className="flex flex-col justify-center items-center">
-                <EllipseSVG width={50} height={50} />
+                <div className="animate-spin">  <EllipseSVG width={50} height={50} /></div>
                 <p className="text-gray-600 text-lg font-medium mt-2">
                     Drag features to view details
                 </p>
