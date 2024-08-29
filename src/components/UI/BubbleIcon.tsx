@@ -1,6 +1,7 @@
 import React from 'react';
 import { FeatureItem } from './BubbleGroup';
 import IconModal from './IconModal';
+import { Draggable } from '@hello-pangea/dnd';
 
 interface Props {
   feature: FeatureItem;
@@ -25,18 +26,27 @@ const positions = [
 
 const BubbleIcon = ({ feature, index, isBubbled }: Props) => {
   return (
-    <div className='relative group inline-block'>
-      <div
-        key={index}
-        className={`cursor-pointer  absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : 'translate-y-[250px]'}`}
-      >
-        {feature.icon}
+    <Draggable draggableId={feature.id.toString()} index={index}>
+      {(provided, snapshot) => (
+        <div
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          className='relative group inline-block'
+        >
+          <div
+            key={index}
+            className={`cursor-pointer  absolute w-8 h-8 text-center rounded-full transition-transform duration-1000 ${isBubbled ? positions[index] : 'translate-y-[250px]'}`}
+          >
+            {feature.icon}
 
-        <div className='opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute  p-3 z-10'>
-          <IconModal name={feature.name} />
+            <div className='opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute  p-3 z-10'>
+              <IconModal name={feature.name} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </Draggable>
   );
 };
 

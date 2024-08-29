@@ -1,45 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EllipseSVG from '@/assets/svgs/EllipseSVG';
-import ArticleSVG from '@/assets/svgs/ArticleSVG';
-import AudioPlayer from '@/assets/svgs/AudioPlayer';
-import DocumentSVG from '@/assets/svgs/DocumentSVG';
-import EditSVG from '@/assets/svgs/EditSVG';
-import RecordSVG from '@/assets/svgs/RecordSVG';
-import WriteSVG from '@/assets/svgs/WriteSVG';
-import SocialMediaSVG from '@/assets/svgs/SocialMediaSVG';
-import ScheduleSVG from '@/assets/svgs/ScheduleSVG';
-import PhotoGallerySVG from '@/assets/svgs/PhotoGallerySVG';
-import MessageSVG from '@/assets/svgs/MessageSVG';
-import VideoEditSVG from '@/assets/svgs/VideoEditSVG';
-import SearchSVG from '@/assets/svgs/SearchSVG';
-import { Droppable } from 'react-beautiful-dnd';
-
-type FeatureItem = {
-  id: number;
-  name: string;
-  icon: React.ReactNode;
-};
+import { Droppable } from '@hello-pangea/dnd';
 
 const DragAndDrop = () => {
-  const [droppedItems, setDroppedItems] = useState<FeatureItem[]>([]);
-
-  const onDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
-    item: FeatureItem
-  ) => {
-    e.dataTransfer.setData('item', JSON.stringify(item));
-  };
-
-  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const item: FeatureItem = JSON.parse(e.dataTransfer.getData('item'));
-    setDroppedItems([...droppedItems, item]);
-  };
-
-  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-  };
-
   return (
     <Droppable droppableId='Icons'>
       {(provided, snapshot) => (
