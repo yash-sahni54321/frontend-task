@@ -1,101 +1,80 @@
 import * as React from 'react';
 const DocumentSVG = (props: React.SVGProps<SVGElement>) => (
   <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width={60}
-    height={63}
+    width='36'
+    height='38'
+    viewBox='0 0 36 38'
     fill='none'
-    {...props}
+    xmlns='http://www.w3.org/2000/svg'
   >
-    <g filter='url(#a)'>
-      <rect
-        width={35.733}
-        height={37.866}
-        x={12.134}
-        y={6.78}
-        fill='url(#b)'
-        rx={13.333}
-      />
-      <rect
-        width={34.133}
-        height={36.266}
-        x={12.934}
-        y={7.58}
-        stroke='#fff'
-        strokeOpacity={0.3}
-        strokeWidth={1.6}
-        rx={12.533}
-      />
-    </g>
-    <g filter='url(#c)'>
+    <rect
+      width='35.7333'
+      height='37.8658'
+      rx='13.3333'
+      fill='url(#paint0_linear_0_1)'
+    />
+    <rect
+      x='0.8'
+      y='0.8'
+      width='34.1333'
+      height='36.2658'
+      rx='12.5333'
+      stroke='white'
+      stroke-opacity='0.3'
+      stroke-width='1.6'
+    />
+    <g filter='url(#filter0_d_0_1)'>
       <path
-        fill='#fff'
-        d='M32.5 22.667h3.666l-4.5-4.5v3.666c0 .5.334.834.834.834Zm0 1.666c-1.417 0-2.5-1.083-2.5-2.5v-4.166h-4.167c-1.417 0-2.5 1.083-2.5 2.5v11.666c0 1.417 1.083 2.5 2.5 2.5h8.333c1.417 0 2.5-1.083 2.5-2.5v-7.5H32.5Zm-5-1.666h.833c.5 0 .833.333.833.833 0 .5-.333.833-.833.833H27.5c-.5 0-.834-.333-.834-.833 0-.5.334-.833.834-.833Zm5 8.333h-5c-.5 0-.834-.333-.834-.833 0-.5.334-.834.834-.834h5c.5 0 .833.334.833.834 0 .5-.333.833-.833.833Zm0-3.333h-5c-.5 0-.834-.334-.834-.834 0-.5.334-.833.834-.833h5c.5 0 .833.333.833.833 0 .5-.333.834-.833.834Z'
+        d='M20.1667 16H23.8333L19.3333 11.5V15.1667C19.3333 15.6667 19.6667 16 20.1667 16ZM20.1667 17.6667C18.75 17.6667 17.6667 16.5833 17.6667 15.1667V11H13.5C12.0833 11 11 12.0833 11 13.5V25.1667C11 26.5833 12.0833 27.6667 13.5 27.6667H21.8333C23.25 27.6667 24.3333 26.5833 24.3333 25.1667V17.6667H20.1667ZM15.1667 16H16C16.5 16 16.8333 16.3333 16.8333 16.8333C16.8333 17.3333 16.5 17.6667 16 17.6667H15.1667C14.6667 17.6667 14.3333 17.3333 14.3333 16.8333C14.3333 16.3333 14.6667 16 15.1667 16ZM20.1667 24.3333H15.1667C14.6667 24.3333 14.3333 24 14.3333 23.5C14.3333 23 14.6667 22.6667 15.1667 22.6667H20.1667C20.6667 22.6667 21 23 21 23.5C21 24 20.6667 24.3333 20.1667 24.3333ZM20.1667 21H15.1667C14.6667 21 14.3333 20.6667 14.3333 20.1667C14.3333 19.6667 14.6667 19.3333 15.1667 19.3333H20.1667C20.6667 19.3333 21 19.6667 21 20.1667C21 20.6667 20.6667 21 20.1667 21Z'
+        fill='white'
       />
     </g>
     <defs>
       <filter
-        id='a'
-        width={59.2}
-        height={61.333}
-        x={0.4}
-        y={0.913}
-        colorInterpolationFilters='sRGB'
+        id='filter0_d_0_1'
+        x='10.4667'
+        y='11'
+        width='14.4'
+        height='17.7333'
         filterUnits='userSpaceOnUse'
+        color-interpolation-filters='sRGB'
       >
-        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feFlood flood-opacity='0' result='BackgroundImageFix' />
         <feColorMatrix
           in='SourceAlpha'
-          result='hardAlpha'
+          type='matrix'
           values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+          result='hardAlpha'
         />
-        <feOffset dy={5.867} />
-        <feGaussianBlur stdDeviation={5.867} />
+        <feOffset dy='0.533333' />
+        <feGaussianBlur stdDeviation='0.266667' />
         <feComposite in2='hardAlpha' operator='out' />
-        <feColorMatrix values='0 0 0 0 0.219608 0 0 0 0 0.619608 0 0 0 0 0.647059 0 0 0 0.4 0' />
-        <feBlend in2='BackgroundImageFix' result='effect1_dropShadow_63_70' />
-        <feBlend
-          in='SourceGraphic'
-          in2='effect1_dropShadow_63_70'
-          result='shape'
-        />
-      </filter>
-      <filter
-        id='c'
-        width={14.4}
-        height={17.733}
-        x={22.8}
-        y={17.667}
-        colorInterpolationFilters='sRGB'
-        filterUnits='userSpaceOnUse'
-      >
-        <feFlood floodOpacity={0} result='BackgroundImageFix' />
         <feColorMatrix
-          in='SourceAlpha'
-          result='hardAlpha'
-          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+          type='matrix'
+          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'
         />
-        <feOffset dy={0.533} />
-        <feGaussianBlur stdDeviation={0.267} />
-        <feComposite in2='hardAlpha' operator='out' />
-        <feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0' />
-        <feBlend in2='BackgroundImageFix' result='effect1_dropShadow_63_70' />
         <feBlend
+          mode='normal'
+          in2='BackgroundImageFix'
+          result='effect1_dropShadow_0_1'
+        />
+        <feBlend
+          mode='normal'
           in='SourceGraphic'
-          in2='effect1_dropShadow_63_70'
+          in2='effect1_dropShadow_0_1'
           result='shape'
         />
       </filter>
       <linearGradient
-        id='b'
-        x1={30}
-        x2={30}
-        y1={6.78}
-        y2={44.646}
+        id='paint0_linear_0_1'
+        x1='17.8667'
+        y1='0'
+        x2='17.8667'
+        y2='37.8658'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stopColor='#70F2DB' />
-        <stop offset={1} stopColor='#23BBC5' />
+        <stop stop-color='#70F2DB' />
+        <stop offset='1' stop-color='#23BBC5' />
       </linearGradient>
     </defs>
   </svg>

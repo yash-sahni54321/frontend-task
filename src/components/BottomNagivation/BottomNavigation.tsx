@@ -3,7 +3,7 @@ import MagicSVG from '@/assets/svgs/MagicSVG';
 import React, { useState } from 'react';
 
 const BottomNavigation = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const navLinks1 = [
     'Home',
@@ -13,7 +13,7 @@ const BottomNavigation = () => {
     'Testimonials',
   ];
 
-  const handleClick = index => {
+  const handleClick = (index: number) => {
     setActiveIndex(index);
   };
 
