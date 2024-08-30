@@ -17,36 +17,36 @@ export default function Home() {
   }, []);
 
   const handleDragEnd = (result: DropResult) => {
-    if (result.draggableId) {
+    if (result.destination && result.destination.droppableId === 'IconFinal') {
       router.push(`/${result.draggableId}`);
-    }
-    if (!result.destination) {
-      return;
     }
   };
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId=''>
+      <Droppable isDropDisabled droppableId='IconInitial'>
         {provided => (
-          <div
-            ref={provided.innerRef}
-            {...provided.droppableProps}
-            className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat'
-            style={{ backgroundImage: `url('/images/background.png')` }}
-          >
-            <div className='flex flex-col items-center justify-evenly mt-5'>
-              <BubbleGroup isBubbled={isBubbled} />
-              <MarketingPlatformInfo />
-              <DragAndDrop />
+          <div ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat'
+              style={{ backgroundImage: `url('/images/background.png')` }}
+            >
+              <div className='flex flex-col items-center justify-evenly mt-5'>
+                <BubbleGroup isBubbled={isBubbled} />
+                <MarketingPlatformInfo />
+                <div className='w-fit'>
+                  <DragAndDrop />
+                </div>
+              </div>
+              <BottomNavigation />
+              <div className='flex justify-center items-center w-full py-2'>
+                <p className='text-black font-light text-sm'>
+                  Loved by product folks at
+                </p>
+              </div>
+              <Footer />
             </div>
-            <BottomNavigation />
-            <div className='flex justify-center items-center w-full py-2'>
-              <p className='text-black font-light text-sm'>
-                Loved by product folks at
-              </p>
-            </div>
-            <Footer />
+            {provided.placeholder}
           </div>
         )}
       </Droppable>

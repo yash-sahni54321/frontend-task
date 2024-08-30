@@ -96,50 +96,25 @@ body {
 }
 
 .dragactive {
-  background-color: rgb(0, 221, 236);
+  background-color: #f0f0f0;
+  border: 2px dashed rgba(150, 150, 150, 0.5);
+  box-shadow: 0 10px 30px rgba(150, 150, 150, 0.2);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .dragcomplete {
-  background-color: rgb(255, 38, 0);
-}
-
-.remove {
-  background-color: rgb(235, 103, 80);
-}
-
-.todos__heading {
-  font-size: 30px;
-  /* text-align: center; */
-  color: white;
-}
-
-.todos__single {
-  display: flex;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 15px;
-  background-image: url('https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg');
-  transition: 0.2s;
+  background-color: #e6e6e6;
+  border: 2px solid rgba(100, 100, 100, 0.5);
+  box-shadow: 0 10px 30px rgba(100, 100, 100, 0.3);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .drag {
   box-shadow: 0 0 20px black;
-}
-
-.todos__single:hover {
-  box-shadow: 0 0 5px black;
-  transform: scale(1.03);
-}
-
-.todos__single--text {
-  flex: 1;
-  padding: 5px;
-  border: none;
-  font-size: 20px;
-}
-
-.todos__single--text:focus {
-  outline: none;
 }
 
 .icon {
