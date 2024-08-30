@@ -1,52 +1,87 @@
-# Frontend UI Design Website
+# NextGen AI
 
-This is a frontend UI design project built using [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Next.js App Router](https://nextjs.org/docs/routing/introduction), and [Tailwind CSS](https://tailwindcss.com/).
+NextGen AI is a Next.js application built using the latest technologies to provide a modern and efficient user experience.
 
 ## Getting Started
 
-To get started with the development server, you can use one of the following commands:
+To get started with the project, follow these instructions:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
 
+Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
 
-Once the server is running, open http://localhost:3000 in your browser to view the website.
+### Installation
 
-Editing the Project
-You can start editing the project by modifying the app/page.tsx file. Changes will automatically update in the browser as you save your edits.
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd frontend-task
+    ```
 
-🛠️  ## Technologies Used
-Next.js: A React framework for building fast and user-friendly web applications.
-TypeScript: A strongly typed programming language that builds on JavaScript, offering better tooling at any scale.
-Next.js App Router: Handles routing within the application, providing a seamless navigation experience.
-Tailwind CSS: A utility-first CSS framework for rapid UI development.
-📚 Learn More
-To learn more about the technologies used in this project, visit the following resources:
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-Next.js Documentation - Learn about Next.js features and API.
-TypeScript Documentation - Understand how TypeScript works and its benefits.
-Tailwind CSS Documentation - Get started with Tailwind CSS and learn about its utility classes.
-🚀 Deploy on Vercel
-Deploying your Next.js application is easy with Vercel, the platform built by the creators of Next.js.
+### Scripts
 
-Check out the Next.js deployment documentation for more details on how to deploy your project.
+The following scripts are available in the project:
 
-🤝 Contributing
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+- **Development Server**: Start the development server.
+    ```bash
+    npm run dev
+    ```
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch-name).
-Make your changes.
-Commit your changes (git commit -m 'Add some feature').
-Push to the branch (git push origin feature-branch-name).
-Open a Pull Request.
-Feel free to open issues or submit pull requests to improve the project.
+- **Build**: Build the application for production.
+    ```bash
+    npm run build
+    ```
 
-📝 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+- **Start**: Start the production server.
+    ```bash
+    npm run start
+    ```
+
+- **Lint**: Run ESLint to check for linting errors.
+    ```bash
+    npm run lint
+    ```
+
+- **Lint Fix**: Run ESLint with auto-fix.
+    ```bash
+    npm run lint:fix
+    ```
+
+### Dependencies
+
+The project uses the following dependencies:
+
+- **@hello-pangea/dnd**: A drag-and-drop library for React.
+- **next**: The Next.js framework.
+- **react**: The React library.
+- **react-dom**: The React DOM library.
+
+### Dev Dependencies
+
+The project includes the following development dependencies:
+
+- **@types/node**: TypeScript definitions for Node.js.
+- **@types/react**: TypeScript definitions for React.
+- **@types/react-dom**: TypeScript definitions for React DOM.
+- **@typescript-eslint/eslint-plugin**: ESLint plugin for TypeScript.
+- **autoprefixer**: PostCSS plugin to parse CSS and add vendor prefixes.
+- **eslint**: ESLint for linting JavaScript/TypeScript code.
+- **eslint-config-next**: ESLint configuration for Next.js.
+- **eslint-config-prettier**: ESLint configuration to disable rules that conflict with Prettier.
+- **eslint-plugin-prettier**: ESLint plugin for Prettier.
+- **postcss**: PostCSS is a tool for transforming CSS with JavaScript plugins.
+- **tailwindcss**: A utility-first CSS framework.
+- **typescript**: TypeScript for static type checking.
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+For more information, check out the [Next.js documentation](https://nextjs.org/docs) and [Tailwind CSS documentation](https://tailwindcss.com/docs).
