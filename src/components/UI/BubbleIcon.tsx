@@ -32,7 +32,7 @@ const BubbleIcon = ({ feature, index, isBubbled }: Props) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className={`relative group inline-block  ${snapshot.isDragging ? 'drag' : ''}`}
+          className={`relative group  ${snapshot.isDragging ? 'drag' : ''}`}
         >
           <div
             key={index}
