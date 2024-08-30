@@ -1,6 +1,7 @@
 # NextGen AI
 
 NextGen AI is a Next.js application built using the latest technologies to provide a modern and efficient user experience.
+<img width="1434" alt="Screenshot 2024-08-30 at 1 20 48 PM" src="https://github.com/user-attachments/assets/866d954a-3bc5-43b0-ad6e-54b79a724e9a">
 
 ## Getting Started
 
@@ -85,3 +86,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 For more information, check out the [Next.js documentation](https://nextjs.org/docs) and [Tailwind CSS documentation](https://tailwindcss.com/docs).
+
+
+
