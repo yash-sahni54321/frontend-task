@@ -6,15 +6,20 @@ import Footer from '@/components/Footer/Footer';
 import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd';
 import DragAndDrop from '@/components/HomePlateformSelect/DragAndDropBox';
 import BubbleGroup from '@/components/UI/BubbleGroup';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isBubbled, setIsBubbled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsBubbled(true);
   }, []);
 
   const handleDragEnd = (result: DropResult) => {
+    if (result.draggableId) {
+      router.push(`/${result.draggableId}`);
+    }
     if (!result.destination) {
       return;
     }
@@ -22,7 +27,7 @@ export default function Home() {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId='some_id'>
+      <Droppable droppableId=''>
         {provided => (
           <div
             ref={provided.innerRef}
@@ -30,7 +35,7 @@ export default function Home() {
             className='w-screen h-screen flex flex-col justify-around bg-cover bg-center bg-no-repeat'
             style={{ backgroundImage: `url('/images/background.png')` }}
           >
-            <div className='flex flex-col items-center justify-evenly'>
+            <div className='flex flex-col items-center justify-evenly mt-5'>
               <BubbleGroup isBubbled={isBubbled} />
               <MarketingPlatformInfo />
               <DragAndDrop />

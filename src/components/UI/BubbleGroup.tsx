@@ -13,6 +13,7 @@ import VideoEditSVG from '@/assets/svgs/VideoEditSVG';
 import SearchSVG from '@/assets/svgs/SearchSVG';
 import BubbleIcon from './BubbleIcon';
 import { isMobile } from '@/utils/utils';
+import { useRouter } from 'next/navigation';
 
 export type FeatureItem = {
   id: number;
@@ -24,24 +25,28 @@ interface Props {
   isBubbled: boolean;
 }
 
-const BubbleGroup: React.FC<Props> = ({ isBubbled }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const features: FeatureItem[] = [
-    { id: 1, name: 'Document', icon: <DocumentSVG /> },
-    { id: 2, name: 'Edit', icon: <EditSVG /> },
-    { id: 3, name: 'Record', icon: <RecordSVG /> },
-    { id: 4, name: 'Write', icon: <WriteSVG /> },
-    { id: 5, name: 'Audio', icon: <AudioPlayer /> },
-    { id: 6, name: 'Social Media', icon: <SocialMediaSVG /> },
-    { id: 7, name: 'Schedule', icon: <ScheduleSVG /> },
-    { id: 8, name: 'Photo Gallery', icon: <PhotoGallerySVG /> },
-    { id: 9, name: 'Message', icon: <MessageSVG /> },
-    { id: 10, name: 'Article', icon: <ArticleSVG /> },
-    { id: 11, name: 'Video Edit', icon: <VideoEditSVG /> },
-    { id: 12, name: 'Search', icon: <SearchSVG /> },
-  ];
+export const features: FeatureItem[] = [
+  { id: 1, name: 'Document', icon: <DocumentSVG /> },
+  { id: 2, name: 'Edit', icon: <EditSVG /> },
+  { id: 3, name: 'Record', icon: <RecordSVG /> },
+  { id: 4, name: 'Write', icon: <WriteSVG /> },
+  { id: 5, name: 'Audio', icon: <AudioPlayer /> },
+  { id: 6, name: 'Social Media', icon: <SocialMediaSVG /> },
+  { id: 7, name: 'Schedule', icon: <ScheduleSVG /> },
+  { id: 8, name: 'Photo Gallery', icon: <PhotoGallerySVG /> },
+  { id: 9, name: 'Message', icon: <MessageSVG /> },
+  { id: 10, name: 'Article', icon: <ArticleSVG /> },
+  { id: 11, name: 'Video Edit', icon: <VideoEditSVG /> },
+  { id: 12, name: 'Search', icon: <SearchSVG /> },
+];
 
-  const handleOnClick = (feature: FeatureItem) => {};
+const BubbleGroup: React.FC<Props> = ({ isBubbled }) => {
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOnClick = (feature: FeatureItem) => {
+    router.push(`/${feature.id}`);
+  };
   return (
     <div className='absolute'>
       {isMobile() ? (
