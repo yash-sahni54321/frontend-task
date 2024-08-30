@@ -4,15 +4,16 @@ import { Droppable } from '@hello-pangea/dnd';
 
 const DragAndDrop = () => {
   return (
-    <Droppable droppableId='Icons'>
+    <Droppable direction='vertical' droppableId='IconFinal'>
       {(provided, snapshot) => (
         <div
-          className={`${snapshot.isDraggingOver ? 'dragactive' : ''} w-full max-w-md`}
+          className=' rounded-3xl w-full max-w-md mx-auto'
           ref={provided.innerRef}
           {...provided.droppableProps}
+          style={{ transition: 'background-color 0.2s ease-in-out' }}
         >
           <div
-            className='h-32 bg-white rounded-3xl border border-dashed border-gray-300 flex items-center justify-center'
+            className={`h-32 w-full px-24 relative bg-white rounded-3xl border border-dashed border-gray-300 flex items-center justify-center ${snapshot.isDraggingOver ? 'dragactive' : ''}`}
             style={{ boxShadow: '0 22px 60px rgba(0, 0, 0, 0.15)' }}
           >
             <div className='flex flex-col justify-center items-center'>
