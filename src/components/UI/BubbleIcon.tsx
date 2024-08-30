@@ -32,15 +32,17 @@ const BubbleIcon = ({ feature, index, isBubbled }: Props) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className={`relative group inline-block  ${snapshot.isDragging ? 'drag' : ''}`}
+          className={`relative group  ${snapshot.isDragging ? 'drag' : ''}`}
         >
           <div
             key={index}
-            className={`cursor-pointer  absolute w-8 h-8 text-center rounded-full transition-transform ease-in-out duration-1000 ${isBubbled ? positions[index] : 'translate-y-[250px]'}`}
+            className={`cursor-pointer absolute w-8 h-8 flex items-center justify-center rounded-full transition-transform ease-in-out duration-1000 ${isBubbled ? positions[index] : 'translate-y-[250px]'}`}
           >
-            {feature.icon}
+            <div className='bg-white p-2 rounded-xl flex items-center justify-center'>
+              {feature.icon}
+            </div>
 
-            <div className='opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute  p-3 z-10'>
+            <div className='opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute p-3 z-10'>
               <IconModal name={feature.name} />
             </div>
           </div>

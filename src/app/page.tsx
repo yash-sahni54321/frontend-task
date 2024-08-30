@@ -34,9 +34,7 @@ export default function Home() {
               <div className='flex flex-col items-center justify-evenly mt-5'>
                 <BubbleGroup isBubbled={isBubbled} />
                 <MarketingPlatformInfo />
-                <div className='w-fit'>
-                  <DragAndDrop />
-                </div>
+                <DragAndDrop />
               </div>
               <BottomNavigation />
               <div className='flex justify-center items-center w-full py-2'>
